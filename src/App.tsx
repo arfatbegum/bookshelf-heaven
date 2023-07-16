@@ -1,12 +1,11 @@
 
-function App() {
+export default function App() {
   return (
     <>
-      <p className="read-the-docs">
+      <p>
         Hello Bookshelf Heaven
       </p>
     </>
   )
 }
 
-export default App
