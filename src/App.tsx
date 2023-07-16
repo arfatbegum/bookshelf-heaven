@@ -1,11 +1,11 @@
+import MainLayout from './layouts/MainLayout';
 
-export default function App() {
+function App() {
   return (
-    <>
-      <p>
-        Hello Bookshelf Heaven
-      </p>
-    </>
-  )
+    <div>
+      <MainLayout />
+    </div>
+  );
 }
 
+export default App;
