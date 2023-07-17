@@ -28,12 +28,12 @@ export default function Navbar() {
               </li>
               <li>
                 <Button variant="link" asChild>
-                  <Link to="/products">All Books</Link>
+                  <Link to="/all-books">All Books</Link>
                 </Button>
               </li>
               <li>
                 <Button variant="link" asChild>
-                  <Link to="/checkout"><Heart className='mr-2'/></Link>
+                  <Link to="/wishlist"><Heart className='mr-2'/></Link>
                 </Button>
               </li>
               <li className="ml-5">
