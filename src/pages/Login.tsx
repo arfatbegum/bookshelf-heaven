@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { BookOpenCheckIcon } from 'lucide-react';
 import { LoginForm } from '@/components/LoginForm';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Login() {
   return (
@@ -26,6 +28,7 @@ export default function Login() {
               </h1>
             </div>
             <LoginForm />
+            <ToastContainer />
           </div>
         </div>
       </div >

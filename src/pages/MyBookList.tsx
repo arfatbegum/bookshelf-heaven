@@ -1,4 +1,3 @@
-import BookCard from "@/components/BookCard";
 import { MyBookListTable } from "@/components/MyBookListTable";
 import Navbar from "@/layouts/Navbar";
 
