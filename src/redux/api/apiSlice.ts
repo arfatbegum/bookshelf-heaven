@@ -19,5 +19,13 @@ export const api = createApi({
       return newHeaders;
     },
   }),
+  tagTypes: [
+    'books',
+    'singleBook',
+    'wishlist',
+    'readingList',
+    'finishedBooks',
+    'review',
+  ],
   endpoints: () => ({}),
 });
