@@ -24,7 +24,7 @@ export const api = createApi({
     'singleBook',
     'wishlist',
     'readingList',
-    'finishedBooks',
+    'finishedReading',
     'review',
   ],
   endpoints: () => ({}),

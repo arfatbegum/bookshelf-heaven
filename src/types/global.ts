@@ -17,10 +17,8 @@ export interface IBook {
   title: string;
   image: string;
   author: string;
-  description: string;
   genre: string;
   publicationDate: string;
-  publisher: string;
   reviews?: object[];
   createdAt?: Date;
 }
