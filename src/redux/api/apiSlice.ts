@@ -20,6 +20,7 @@ export const api = createApi({
     },
   }),
   tagTypes: [
+    'myProfile',
     'books',
     'singleBook',
     'wishlist',

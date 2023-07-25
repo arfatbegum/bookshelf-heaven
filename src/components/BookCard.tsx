@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useAddToWishListMutation, useAddToReadingListMutation } from "@/redux/user/userApi";
+import { useAddToWishListMutation, useAddToReadingListMutation } from "@/redux/features/user/userApi";
 import { IBook } from "@/types/global";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BiBookReader } from "react-icons/bi";

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/layouts/Navbar";
 import Loader from "@/components/Loader";
 import { useDeleteBookMutation, useSingleBookQuery } from "@/redux/features/book/bookSlice";
-import { useAddToReadingListMutation, useAddToWishListMutation } from "@/redux/user/userApi";
+import { useAddToReadingListMutation, useAddToWishListMutation, useGetMyProfileQuery } from "@/redux/features/user/userApi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BiBookReader } from "react-icons/bi";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -17,18 +17,15 @@ export default function BookDetails() {
   const [addToWishList] = useAddToWishListMutation();
   const [addToReadingList] = useAddToReadingListMutation();
   const [deleteBook] = useDeleteBookMutation();
-
-  const storedAuthData = localStorage.getItem('auth');
-  const authData = storedAuthData ? JSON.parse(storedAuthData) : null;
-
-  const user = authData ? authData.user : null;
   const { data, isLoading } = useSingleBookQuery(id);
+  const { data: userData } = useGetMyProfileQuery(undefined);
 
   const book = data?.data;
+  const user = userData?.data;
 
   let authorEmail = false;
   if (user != null) {
-    if (user?.id === book?.authorEmail) {
+    if (user?.email === book?.authorEmail) {
       authorEmail = true;
     }
   }

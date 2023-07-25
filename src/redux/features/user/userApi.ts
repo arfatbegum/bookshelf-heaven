@@ -1,7 +1,11 @@
-import { api } from '../api/apiSlice';
+import { api } from '@/redux/api/apiSlice';
 
 export const userApi = api.injectEndpoints({
   endpoints: (builder) => ({
+    getMyProfile: builder.query({
+      query: () => '/users/my-profile',
+      providesTags: ['myProfile'],
+    }),
     addToWishList: builder.mutation({
       query: ({ id }) => ({
         url: `/users/addToWishlist/${id}`,
@@ -62,6 +66,7 @@ export const userApi = api.injectEndpoints({
 export const {
   useAddToWishListMutation,
   useGetWishlistQuery,
+  useGetMyProfileQuery,
   useAddToReadingListMutation,
   useAddToFinishedBooksMutation,
   useGetReadingListQuery,
