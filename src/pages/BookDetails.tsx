@@ -25,7 +25,6 @@ export default function BookDetails() {
   const { data, isLoading } = useSingleBookQuery(id);
 
   const book = data?.data;
-  //const { _id, image, title, author, genre, publicationDate } = book;
 
   let authorEmail = false;
   if (user != null) {
@@ -104,7 +103,7 @@ export default function BookDetails() {
               </div>
             </div >
           </div >
-          <BookReview />
+          <BookReview id={book?._id} />
           <ToastContainer />
         </>
       )
