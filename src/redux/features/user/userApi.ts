@@ -20,7 +20,7 @@ export const userApi = api.injectEndpoints({
       }),
       invalidatesTags: ['wishlist', 'readingList'],
     }),
-    addToFinishedBooks: builder.mutation({
+    addToFinishedReading: builder.mutation({
       query: ({ id }) => ({
         url: `/users/addToFinishedReading/${id}`,
         method: 'POST',
@@ -41,7 +41,7 @@ export const userApi = api.injectEndpoints({
       }),
       invalidatesTags: ['readingList'],
     }),
-    removeFromFinishedBooks: builder.mutation({
+    removeFromFinishedReading: builder.mutation({
       query: ({ id }) => ({
         url: `/users/removeFromFinishedReading/${id}`,
         method: 'POST',
@@ -56,7 +56,7 @@ export const userApi = api.injectEndpoints({
       query: () => '/users/readingList',
       providesTags: ['readingList'],
     }),
-    getFinishedBooks: builder.query({
+    getFinishedReading: builder.query({
       query: () => '/users/finishedReading',
       providesTags: ['finishedReading'],
     }),
@@ -68,10 +68,10 @@ export const {
   useGetWishlistQuery,
   useGetMyProfileQuery,
   useAddToReadingListMutation,
-  useAddToFinishedBooksMutation,
+  useAddToFinishedReadingMutation,
   useGetReadingListQuery,
-  useGetFinishedBooksQuery,
+  useGetFinishedReadingQuery,
   useRemoveFromWishListMutation,
   useRemoveFromReadingListMutation,
-  useRemoveFromFinishedBooksMutation,
+  useRemoveFromFinishedReadingMutation,
 } = userApi;

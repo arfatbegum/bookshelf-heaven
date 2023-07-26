@@ -10,6 +10,7 @@ import NotFound from '@/pages/NotFound';
 import SignUp from '@/pages/SignUp';
 import Wishlist from '@/pages/Wishlist';
 import { createBrowserRouter } from 'react-router-dom';
+import FinishedReadingBookList from '@/pages/FinishedReadingBookList';
 
 const routes = createBrowserRouter([
   {
@@ -43,8 +44,12 @@ const routes = createBrowserRouter([
     element: <Wishlist />,
   },
   {
-    path: '/mybooklist',
+    path: '/reading-booklist',
     element: <MyBooklist />,
+  },
+  {
+    path: '/finished-reading-booklist',
+    element: <FinishedReadingBookList />,
   },
   {
     path: '/login',
