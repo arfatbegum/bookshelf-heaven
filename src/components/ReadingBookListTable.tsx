@@ -6,8 +6,7 @@ import { useAddToFinishedReadingMutation, useGetReadingListQuery, useRemoveFromR
 import { IBook } from "@/types/global";
 import { BsFillBookmarkCheckFill } from "react-icons/bs";
 import { CiBookmarkRemove } from "react-icons/ci";
-import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
 
 export function ReadingBookListTable() {
     const { data } = useGetReadingListQuery(undefined);
@@ -63,7 +62,6 @@ export function ReadingBookListTable() {
                         </TableRow>
                     ))}
                 </TableBody>
-                <ToastContainer />
             </Table >
         </>
 

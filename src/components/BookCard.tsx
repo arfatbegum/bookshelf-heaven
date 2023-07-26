@@ -6,8 +6,6 @@ import { BiBookReader } from "react-icons/bi";
 import { CiRead } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 export default function BookCard(book: IBook) {
     const { _id, image, title, author, genre, publicationDate } = book
@@ -52,7 +50,6 @@ export default function BookCard(book: IBook) {
                     className='text-[#37be4e] text-3xl bg-white border border-gray-200 shadow-sm mb-2 p-1 rounded' />
                 <Link to={`/book-details/${_id}`}><CiRead className='text-[#37be4e] text-3xl bg-white border border-gray-200 shadow-sm mb-2 p-1 rounded' /></Link>
             </div>
-            <ToastContainer />
         </div>
     );
 }

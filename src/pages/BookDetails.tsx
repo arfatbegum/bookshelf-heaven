@@ -1,15 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import BookReview from "@/components/BookReview";
 import { Button } from "@/components/ui/button";
-import Navbar from "@/layouts/Navbar";
 import Loader from "@/components/Loader";
 import { useDeleteBookMutation, useSingleBookQuery } from "@/redux/features/book/bookSlice";
 import { useAddToReadingListMutation, useAddToWishListMutation, useGetMyProfileQuery } from "@/redux/features/user/userApi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BiBookReader } from "react-icons/bi";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
 
 export default function BookDetails() {
   const { id } = useParams();
@@ -66,14 +64,13 @@ export default function BookDetails() {
 
   return (
     <>
-      <Navbar />
       {isLoading ? (
         <div className="flex justify-center h-[100vh]">
           <Loader />
         </div>
       ) : (
         <>
-          <div className="pt-28 pb-8">
+          <div className="py-8">
             <div className="relative max-w-7xl mx-auto flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
               <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={book?.image} alt="" />
               <div className="flex flex-col justify-between p-4 leading-normal">
@@ -101,7 +98,6 @@ export default function BookDetails() {
             </div >
           </div >
           <BookReview id={book?._id} />
-          <ToastContainer />
         </>
       )
       }

@@ -30,16 +30,32 @@ export default function Navbar() {
       <div className="h-full w-full bg-white/60">
         <div className="flex items-center justify-between w-full md:max-w-7xl h-full mx-auto ">
           <div>
-            <h1 className='flex items-center uppercase font-bold'><BookOpenCheckIcon className='mr-2 text-[#37be4e]' /> BookShelf Heaven</h1>
+            <Link
+              to="/"
+            >
+              <h1 className='flex items-center uppercase font-bold'><BookOpenCheckIcon className='mr-2 text-[#37be4e]' /> BookShelf Heaven</h1>
+            </Link>
           </div>
           <div>
             <ul className="flex items-center uppercase font-semibold">
               {token ? (
-                <li>
-                  <Button variant="link" asChild>
-                    <Link to="/wishlist"><Heart className='mr-2' /></Link>
-                  </Button>
-                </li>
+                <>
+                  <li>
+                    <Button variant="link" asChild>
+                      <Link to="/">Home</Link>
+                    </Button>
+                  </li>
+                  <li>
+                    <Button variant="link" asChild>
+                      <Link to="/all-books">All Books</Link>
+                    </Button>
+                  </li>
+                  <li>
+                    <Button variant="link" asChild>
+                      <Link to="/wishlist"><Heart className='mr-2' /></Link>
+                    </Button>
+                  </li>
+                </>
               ) : (
                 <>
                   <li>

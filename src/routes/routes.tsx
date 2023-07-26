@@ -5,62 +5,88 @@ import BookDetails from '@/pages/BookDetails';
 import EditBook from '@/pages/EditBook';
 import Home from '@/pages/Home';
 import Login from '@/pages/Login';
-import MyBooklist from '@/pages/ReadingBookList';
+import ReadingBookList from '@/pages/ReadingBookList';
 import NotFound from '@/pages/NotFound';
 import SignUp from '@/pages/SignUp';
 import Wishlist from '@/pages/Wishlist';
 import { createBrowserRouter } from 'react-router-dom';
 import FinishedReadingBookList from '@/pages/FinishedReadingBookList';
+import { PrivateRoute } from './PrivateRoute';
+import SearchResults from '@/pages/SearchResults';
 
 const routes = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
     children: [
       {
-        index: true,
+        path: "/",
         element: <Home />,
-      }
+      },
+      {
+        path: "/all-books",
+        element: <AllBooks />,
+      },
+      {
+        path: '/search/:searchTerm',
+        element: <SearchResults />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/edit-book/:id",
+        element: (
+          <PrivateRoute>
+            <EditBook />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/book-details/:id",
+        element: <BookDetails />,
+      },
+      {
+        path: "/add-book",
+        element: (
+          <PrivateRoute>
+            <AddNewBook />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/wishlist",
+        element: (
+          <PrivateRoute>
+            <Wishlist />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/reading-booklist",
+        element: (
+          <PrivateRoute>
+            <ReadingBookList />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/finished-reading-booklist",
+        element: (
+          <PrivateRoute>
+            <FinishedReadingBookList />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
   {
-    path: '/all-books',
-    element: <AllBooks />,
-  },
-  {
-    path: '/book-details/:id',
-    element: <BookDetails />,
-  },
-  {
-    path: '/add-book',
-    element: <AddNewBook />,
-  },
-  {
-    path: '/edit-book/:id',
-    element: <EditBook />,
-  },
-  {
-    path: '/wishlist',
-    element: <Wishlist />,
-  },
-  {
-    path: '/reading-booklist',
-    element: <MyBooklist />,
-  },
-  {
-    path: '/finished-reading-booklist',
-    element: <FinishedReadingBookList />,
-  },
-  {
-    path: '/login',
-    element: <Login />,
-  },
-  {
-    path: '/signup',
-    element: <SignUp />,
-  },
-  {
-    path: '*',
+    path: "*",
     element: <NotFound />,
   },
 ]);
