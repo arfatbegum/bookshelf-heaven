@@ -18,7 +18,6 @@ export default function BookReview({ id }: BookReviewProps) {
     const [reviewInput, setReviewInput] = useState('');
     const [addReview, { isLoading }] = useAddReviewMutation();
     const { data } = useGetReviewQuery(id);
-
     const onFinishHandler = async (e: any) => {
         e.preventDefault();
         if (!reviewInput) {
@@ -60,11 +59,11 @@ export default function BookReview({ id }: BookReviewProps) {
             <div className="mt-10">
                 {data?.data?.length ? (
                     <>
-                        {data?.data.map((review: any, index: any) => (
+                        {data?.data?.map((review: any, index: any) => (
                             <div key={index} className="flex gap-3 items-center mb-5">
                                 <Avatar>
                                     <AvatarImage src="https://github.com/shadcn.png" />
-                                    <AvatarFallback>{review.reviewer.name[0]}</AvatarFallback>
+                                    <AvatarFallback>{review.reviewer.name}</AvatarFallback>
                                 </Avatar>
                                 <p>{review.review}</p>
                             </div>
