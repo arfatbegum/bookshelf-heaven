@@ -48,7 +48,6 @@ export function ReadingBookListTable() {
                     </TableRow>
                 </TableHeader>
                 <TableBody className="w-full">
-
                     {books?.map((book: IBook) => (
                         <TableRow key={book._id}>
                             <TableCell className="font-medium">{book.title}</TableCell>
@@ -56,8 +55,8 @@ export function ReadingBookListTable() {
                             <TableCell>{book.genre}</TableCell>
                             <TableCell>{book.publicationDate}</TableCell>
                             <TableCell className="flex justify-center items-center">
-                                <BsFillBookmarkCheckFill onClick={() => handleAddToFinishedReading(book._id)} className="text-xl text-[#37be4e]" />
-                                <CiBookmarkRemove onClick={() => handleRemoveFromReadingList(book._id)} className="text-2xl text-[#37be4e]" />
+                                <BsFillBookmarkCheckFill onClick={() => handleAddToFinishedReading(book._id)} className="text-xl text-[#37be4e] cursor-pointer" />
+                                <CiBookmarkRemove onClick={() => handleRemoveFromReadingList(book._id)} className="text-2xl text-[#37be4e] cursor-pointer" />
                             </TableCell>
                         </TableRow>
                     ))}

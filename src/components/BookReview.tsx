@@ -18,7 +18,7 @@ export default function BookReview({ id }: BookReviewProps) {
     const [reviewInput, setReviewInput] = useState('');
     const [addReview, { isLoading }] = useAddReviewMutation();
     const { data } = useGetReviewQuery(id);
-    const onFinishHandler = async (e: any) => {
+    const onSubmitHandler = async (e: any) => {
         e.preventDefault();
         if (!reviewInput) {
             toast.error('Review cannot be empty.');
@@ -42,9 +42,12 @@ export default function BookReview({ id }: BookReviewProps) {
     return (
         <div className="max-w-7xl mx-auto mt-5">
             <div>
-                <form className="w-full flex gap-5 items-center" onSubmit={onFinishHandler}>
+                <form className="w-full flex gap-5 items-center" onSubmit={onSubmitHandler}>
                     <Textarea
-                        onChange={(e) => setReviewInput(e.target.value)}
+                        value={reviewInput}
+                        onChange={(e) => {
+                            setReviewInput(e.target.value);
+                        }}
                         className="min-h-[30px]"
                     />
                     {isLoading ? (

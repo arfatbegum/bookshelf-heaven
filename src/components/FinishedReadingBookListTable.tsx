@@ -48,7 +48,7 @@ export function FinishedReadingBookListTable() {
                             <TableCell>{book.genre}</TableCell>
                             <TableCell>{book.publicationDate}</TableCell>
                             <TableCell className="flex justify-center items-center">
-                                <CiBookmarkRemove onClick={() => handleRemoveFromFinishedReading(book._id)} className="text-2xl text-[#37be4e]" />
+                                <CiBookmarkRemove onClick={() => handleRemoveFromFinishedReading(book._id)} className="text-2xl text-[#37be4e] cursor-pointer" />
                             </TableCell>
                         </TableRow>
                     ))}

@@ -12,7 +12,7 @@ const addAuthTokenToHeaders = (headers: Headers) => {
 export const api = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:5000/api/v1',
+    baseUrl: 'https://bookshelf-heaven.vercel.app/api/v1',
     prepareHeaders: (headers) => {
       const newHeaders = new Headers(headers);
       addAuthTokenToHeaders(newHeaders);

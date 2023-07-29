@@ -80,19 +80,19 @@ export default function BookDetails() {
                 <p className="text-base leading-relaxed mt-1">Publication Date: {book?.publicationDate}</p>
                 {authorEmail && (
                   <div className="flex mt-2">
-                    <Button className="bg-[#37be4e] uppercase text-sm font-semibold w-24 h-9 rounded-md px-3 mr-2">
+                    <Button className="bg-[#37be4e] uppercase text-sm font-semibold w-24 h-9 rounded-md px-3 mr-2 cursor-pointer">
                       <Link to={`/edit-book/${book?._id}`}>Edit</Link>
                     </Button>
-                    <Button onClick={handleDeleteBook} className="bg-[#37be4e] uppercase text-sm font-semibold w-24 h-9 rounded-md px-3">Delete </Button>
+                    <Button onClick={handleDeleteBook} className="bg-[#37be4e] uppercase text-sm font-semibold w-24 h-9 rounded-md px-3 cursor-pointer">Delete </Button>
                   </div>
                 )}
                 <div className="absolute top-5 right-5">
                   <AiOutlineHeart
                     onClick={handleAddToWishlist}
-                    className='text-[#37be4e] text-3xl bg-white border border-gray-200 shadow-sm mb-2 p-1 rounded' />
+                    className='text-[#37be4e] text-3xl bg-white border border-gray-200 shadow-sm mb-2 p-1 rounded cursor-pointer' />
                   <BiBookReader
                     onClick={handleAddToReadingList}
-                    className='text-[#37be4e] text-3xl bg-white border border-gray-200 shadow-sm mb-2 p-1 rounded' />
+                    className='text-[#37be4e] text-3xl bg-white border border-gray-200 shadow-sm mb-2 p-1 rounded cursor-pointer' />
                 </div>
               </div>
             </div >
